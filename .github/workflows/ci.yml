@@ -40,8 +40,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          cache: 'npm' # Caches npm packages for faster
-          builds
+          cache: 'npm' # Caches npm packages for faster builds
 
 # Step 3: Install our app's dependencies
       - name: Install dependencies
