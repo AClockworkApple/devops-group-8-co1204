@@ -35,3 +35,6 @@ EXPOSE 3000
 
 # The command to run the application (check your package.json 'start' script)
 CMD [ "npm", "start" ]
+
+# Build the image from the Dockerfile in the current directory (.)
+# -t tags it as 'my-app:1.0' (replace 'my-app' with your project name)
