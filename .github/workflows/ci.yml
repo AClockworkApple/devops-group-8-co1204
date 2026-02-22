@@ -43,7 +43,11 @@ jobs:
         with:
           node-version: '18'
 
-      # Step 3: Install our app's dependencies
+      # Step 3: Initialize the database with schema
+      - name: Initialize database
+        run: PGPASSWORD=mypassword psql -h localhost -U myuser -d mydatabase -f database/database.sql
+
+      # Step 4: Install our app's dependencies
       - name: Install dependencies
         run: cd backend && npm install
 
