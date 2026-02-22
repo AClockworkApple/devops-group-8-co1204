@@ -21,7 +21,7 @@ jobs:
         image: postgres:15-alpine
         env:
           POSTGRES_USER: myuser
-          POSTGRES_PASSWORD: mypass
+          POSTGRES_PASSWORD: mypassword
           POSTGRES_DB: mydatabase
         ports:
           - 5432:5432
@@ -54,7 +54,7 @@ jobs:
           NODE_ENV: test
           DB_HOST: localhost # GitHub maps service
           DB_USER: myuser
-          DB_PASSWORD: mypass
+          DB_PASSWORD: mypassword
           DB_NAME: mydatabase
 
       # Step 5: Log in to Docker Hub
