@@ -1,6 +1,7 @@
 # DevOps Base Project
 Le Thai An
 Pham Huu Hoang
+Ngo Minh An
 ## Project Overview
 
 This is a simple Todo application with:
