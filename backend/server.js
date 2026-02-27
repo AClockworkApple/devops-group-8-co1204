@@ -69,22 +69,7 @@ app.delete('/api/todos/:id', async (req, res) => {
 
 // BUG #4: Missing PUT endpoint for updating todos
 // STUDENT TODO: Implement PUT /api/todos/:id endpoint
-app.put('/api/todos/:id', async (req, res) => {
-   try {
-      const { id } = req.params;
-      const { title, completed } = req.body;
-      const result = await pool.query(
-         'UPDATE todos SET title = COALESCE($1, title), completed = COALESCE($2, completed) WHERE id = $3 RETURNING *',
-         [title, completed, id]
-      );
-      if (result.rowCount === 0) {
-         return res.status(404).json({ error: 'Todo not found' });
-      }
-      res.json(result.rows[0]);
-   } catch (err) {
-      res.status(500).json({ error: err.message });
-   }
-});
+
 
 const port = process.env.PORT || 8080;
 
@@ -95,6 +80,8 @@ if (process.env.NODE_ENV !== 'test') {
       console.log(`Backend running on port ${port}`);
    });
 }
+
+
 
 // BUG #6: App not exported - tests can't import it!
 // STUDENT FIX: Export the app module
